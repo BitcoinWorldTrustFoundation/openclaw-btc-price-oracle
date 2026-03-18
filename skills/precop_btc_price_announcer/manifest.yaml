@@ -1,0 +1,38 @@
+name: precop_btc_price_announcer
+description: |
+  PRECOP Bitcoin Mainnet Price Oracle — OpenClaw Skill
+  Extracts trustless on-chain BTC price using Native UTXOracle v9.1 (Multi-RPC).
+  Enforces PRECOP v5.3 thermodynamic entropy logic via backward-expanding window.
+  Outputs strict uint64 format (price_cents_uint64) for Simplicity covenants.
+  Broadcasts full canonical JSON to Telegram for public auditability.
+
+version: 0.1.4
+author: BitcoinWorldTrustfoundation
+
+permissions:
+  - network_access:
+      hosts:
+        - "127.0.0.1"
+        - "localhost"
+        - "api.telegram.org"
+        - "rpc.ankr.com"
+        - "btc.getblock.io"
+        - "public.nownodes.io"
+        - "api.blockcypher.com"
+  - tcp:
+      ports: [8332, 80, 443]
+  - telegram:
+      enabled: true
+      default_chat_id: ${TELEGRAM_CHAT_ID}
+  - filesystem_read:
+      paths: [".env"]
+  - filesystem_write:
+      paths: ["btc_price_state.json"]
+
+tags:
+  - bitcoin-mainnet
+  - price-oracle
+  - utxoracle
+  - precop-l1
+  - openclaw-skill
+  - thermodynamic-consensus
