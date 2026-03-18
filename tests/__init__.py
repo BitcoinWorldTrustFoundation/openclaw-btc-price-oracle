@@ -1,1 +1,1 @@
-# PRECOP Sentinel — test suite
+# PRECOP Oracle — test suite
