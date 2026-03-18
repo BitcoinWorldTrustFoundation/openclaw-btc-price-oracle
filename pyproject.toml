@@ -3,7 +3,7 @@ name = "precop-openclaw-btc-price-oracle"
 version = "0.1.2"
 description = "Native UTXOracle v9.1 Thermodynamic Extraction for PRECOP"
 authors = [
-    { name = "BitcoinWorldTrustfoundation", email = "contact@bitcoinworldtrust.org" }
+    { name = "BitcoinWorldTrustFoundation", email = "contact@bitcoinworldtrust.org" }
 ]
 dependencies = [
     "httpx>=0.27.0",

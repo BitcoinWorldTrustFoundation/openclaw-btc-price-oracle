@@ -6,7 +6,7 @@ Thank you for being part of the Bitcoin sovereign future!
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/BitcoinWorldTrustfoundation/precop-openclaw-btc-price-oracle.git
+   git clone https://github.com/BitcoinWorldTrustFoundation/precop-openclaw-btc-price-oracle.git
    cd precop-openclaw-btc-price-oracle
    ```
 

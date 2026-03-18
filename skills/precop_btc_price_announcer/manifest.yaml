@@ -7,7 +7,7 @@ description: |
   Broadcasts full canonical JSON to Telegram for public auditability.
 
 version: 0.1.4
-author: BitcoinWorldTrustfoundation
+author: BitcoinWorldTrustFoundation
 
 permissions:
   - network_access:

@@ -22,7 +22,7 @@ Most oracles rely on "trusted" sources or simple relays. This skill implements t
 ### 1. Simple Install
 Run our setup wizard to handle the heavy lifting (virtual environment, dependencies, and settings):
 ```bash
-git clone https://github.com/BitcoinWorldTrustfoundation/precop-openclaw-btc-price-oracle.git
+git clone https://github.com/BitcoinWorldTrustFoundation/precop-openclaw-btc-price-oracle.git
 cd precop-openclaw-btc-price-oracle
 ./install.sh
 ```
@@ -61,4 +61,4 @@ We take security seriously because we are building the future of DeFi on Bitcoin
 ## 🤝 Contributing
 Join the OpenClaw revolution! Check out [CONTRIBUTING.md](CONTRIBUTING.md) to see how you can help harden the oracle even further.
 
-**Produced with ❤️ for the BitcoinWorldTrustfoundation.** 🛡️🌍
+**Produced with ❤️ for the BitcoinWorldTrustFoundation.** 🛡️🌍
