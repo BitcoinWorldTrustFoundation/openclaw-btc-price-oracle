@@ -36,7 +36,7 @@ class UTXOracleEngine:
         Étend la fenêtre vers le passé si l'entropie (nombre de TX L1) est trop faible.
         Retourne : (price_cents_uint64, blocks_scanned)
         """
-        logger.info(f"Début extraction thermodynamique (Cible: {self.base_window} blocs depuis {current_height})...")
+        logger.info(f"🔬 Analyse thermodynamique (Cible: {self.base_window} blocs depuis {current_height})...")
         
         blocks_scanned = self.base_window
         
@@ -44,20 +44,19 @@ class UTXOracleEngine:
             start_height = current_height - blocks_scanned + 1
             
             try:
-                # 1. Vérification de l'entropie (le nombre de tx éligibles dans les blocs)
+                # 1. Vérification de l'entropie
                 entropy = await self.core_utxo_client.count_eligible_transactions(start_height, current_height)
                 
                 if entropy >= self.min_entropy:
-                    logger.info(f"Entropie atteinte : {entropy} TXs éligibles sur {blocks_scanned} blocs.")
+                    logger.info(f"🔋 Entropie validée : {entropy} TXs sur {blocks_scanned} blocs.")
                     
-                    # 2. Exécution de l'algorithme en 12 étapes de precop_core
-                    # Retourne un float en USD (ex: 85412.50)
+                    # 2. Exécution de l'algorithme UTXOracle 12-step
                     price_usd = await self.core_utxo_client.compute_price(start_height, current_height)
                     
-                    # 3. Conversion stricte L1 (uint64 en centimes, aucun flottant)
+                    # 3. Conversion stricte L1 (uint64 cents)
                     price_cents_uint64 = int(price_usd * 100)
                     
-                    logger.info(f"Prix validé par UTXOracle : {price_cents_uint64} cents.")
+                    logger.info(f"✅ Prix validé par UTXOracle : {price_cents_uint64} cents.")
                     return price_cents_uint64, blocks_scanned
                 
                 else:
